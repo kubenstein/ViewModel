@@ -46,7 +46,7 @@ class Report::Show::View < ViewModel::Base
     }
   end
 
-  def display_formatted_header(bold = true)
+  def display_formatted_header(user, bold = true)
     text = bold ? "<b> #{user.email} </b>" : user.email
     text.html_safe
   end
@@ -68,14 +68,14 @@ app/views/report/show/view.html.slim:
 
 ```ruby
 
-h1 = _.display_formatted_header
+h1 = _.display_formatted_header(user)
 
 strong Title of the Report:
 span = report.name
 or
 span = params[:report].name
 
-h3.normal-header = _.display_formatted_header(false)
+h3.normal-header = _.display_formatted_header(user, false)
 
 .form
   = Report::Form::View.new(_, report: new_report).call

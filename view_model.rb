@@ -6,7 +6,7 @@ module ViewModel
 
 
     attr_accessor :delegate
-    def_delegator :render, :delegate
+    def_delegator :delegate, :render
 
     def self.declared_params(*declared_param_keys)
       declared_param_keys.unshift(DEFAULT_AVAILABLE_PARAMS)
@@ -32,9 +32,9 @@ module ViewModel
 
     def render_params
       rp = {template: template_path,
-                       formats: [format],
-                       status: status,
-                       locals: view_params.merge(_: self, params: view_params)}
+            formats: [format],
+            status: status,
+            locals: view_params.merge(_: self, params: view_params)}
       rp.merge!({layout: layout}) unless layout == :no_layout_specified
       rp
     end
