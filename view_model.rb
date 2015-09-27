@@ -19,11 +19,6 @@ module ViewModel
     end
 
     def call(other_render_params = {})
-      render_params = {template: template_path,
-                       formats: [format],
-                       status: status,
-                       locals: view_params.merge(_: self, params: view_params)}
-      render_params.merge!({layout: layout}) unless layout == :no_layout_specified
       render render_params.merge(other_render_params)
     end
 
@@ -33,6 +28,15 @@ module ViewModel
 
     def params
       filtered_params
+    end
+
+    def render_params
+      rp = {template: template_path,
+                       formats: [format],
+                       status: status,
+                       locals: view_params.merge(_: self, params: view_params)}
+      rp.merge!({layout: layout}) unless layout == :no_layout_specified
+      rp
     end
 
 
