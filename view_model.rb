@@ -1,9 +1,12 @@
 module ViewModel
   class Base
+    extend Forwardable
+
     DEFAULT_AVAILABLE_PARAMS = [:format, :layout]
 
+
     attr_accessor :delegate
-    delegate :render, to: :delegate
+    def_delegator :render, :delegate
 
     def self.declared_params(*declared_param_keys)
       declared_param_keys.unshift(DEFAULT_AVAILABLE_PARAMS)
