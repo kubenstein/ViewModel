@@ -97,7 +97,7 @@ Those methods can be overwritten for more specyfic needs. It directly maps to `r
 - Default format is `html`
 - Layout param is skipped by default
 - Default status is `:ok`
-- Default template_path is `view(.format)(.preprocesor)` in same directory as ViewModel
+- Default template_path is `view(.format)(.preprocessor)` in same directory as ViewModel
 
 ## _
 `_` is ViewModel object itself. It is useful for accessing ViewModel public methods a.k.a. Helpers or passing view_context to nested ViewModels.
