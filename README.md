@@ -1,4 +1,4 @@
-# ViewModel (POC)
+# ViewModel (POC) [![Build Status](https://travis-ci.org/kubenstein/ViewModel.png?branch=master)](https://travis-ci.org/kubenstein/ViewModel)
 
 ViewModel is experimental, super simple view layer for Rails heavy inspired by idea of [Cells](https://github.com/apotonick/cells).
 

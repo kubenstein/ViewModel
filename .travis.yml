@@ -1,0 +1,10 @@
+script:
+  - "cd specs && bundle exec rspec view_model_spec.rb"
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - ruby-head
+notifications:
+  email:
+    on_success: always
+    on_failure: always
